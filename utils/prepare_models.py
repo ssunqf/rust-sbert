@@ -55,9 +55,9 @@ def convert_to_c_array(target_path, prefix="", suffix=False):
         ['cargo', 'run', '--bin=convert-tensor', '--manifest-path=%s' % toml_location, '--', source, target])
 
 if __name__ == "__main__":
-    url = "https://public.ukp.informatik.tu-darmstadt.de/reimers/sentence-transformers/v0.2/distiluse-base-multilingual-cased.zip"
+    url = "https://public.ukp.informatik.tu-darmstadt.de/reimers/sentence-transformers/v0.2/distilbert-base-nli-stsb-mean-tokens.zip"
     
-    path = download_model(url, "distiluse-base-multilingual-cased")
+    path = download_model(url, "distilbert-base-nli-stsb-mean-tokens")
     
-    convert_to_c_array(path + '/0_DistilBERT', prefix='distilbert.')
-    convert_to_c_array(path + '/2_Dense', suffix=True)
+    convert_to_c_array(path + '/0_Transformer', prefix='distilbert.')
+    # convert_to_c_array(path + '/2_Dense', suffix=True)
